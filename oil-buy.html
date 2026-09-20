@@ -3,21 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>طلب شراء زيت الزيتون</title>
+    <title>طلب شراء زيت الزيتون - المنصة الرقمية</title>
     <style>
-        body { font-family: Tahoma, Arial, sans-serif; background-color: #f7f9f6; margin: 0; padding: 20px; color: #333; direction: rtl; text-align: right; }
-        .container { max-width: 700px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .header { text-align: center; margin-bottom: 25px; }
-        .header img { max-width: 120px; height: auto; }
-        h1 { color: #2e5a27; font-size: 22px; }
-        form { display: flex; flex-direction: column; gap: 15px; }
-        label { font-weight: bold; font-size: 14px; color: #444; }
-        input, select, textarea { padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; width: 100%; box-sizing: border-box; }
-        button { background-color: #2e5a27; color: white; padding: 12px; border: none; border-radius: 4px; font-size: 16px; font-weight: bold; cursor: pointer; }
+        :root {
+            --primary: #2e5a27;
+            --whatsapp: #25d366;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: system-ui, -apple-system, sans-serif; background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; padding: 40px 20px; direction: rtl; text-align: right; }
+        .container { max-width: 600px; margin: 0 auto; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 35px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+        .header { text-align: center; margin-bottom: 30px; }
+        .header img { max-width: 100px; height: auto; margin-bottom: 15px; }
+        .header h1 { font-size: 20px; color: var(--primary); font-weight: 700; }
+        form { display: flex; flex-direction: column; gap: 18px; }
+        .form-group { display: flex; flex-direction: column; gap: 6px; }
+        label { font-size: 13px; font-weight: 600; color: var(--text-main); }
+        input[type="text"], input[type="tel"], input[type="number"], textarea, input[type="file"] { 
+            padding: 12px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 14px; background: #fafafa; width: 100%; transition: border-color 0.2s; 
+        }
+        input:focus, textarea:focus { outline: none; border-color: var(--primary); background: #fff; }
+        .file-upload-box {
+            border: 2px dashed var(--border-color); padding: 20px; text-align: center; border-radius: 8px; background: #fafafa; cursor: pointer; transition: 0.2s;
+        }
+        .file-upload-box:hover { border-color: var(--primary); background: #f0fdf4; }
+        .file-upload-box input { display: none; }
+        .file-label { font-size: 13px; color: var(--text-muted); cursor: pointer; display: block; }
+        button { background-color: var(--primary); color: white; padding: 14px; border: none; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; transition: background 0.2s; }
         button:hover { background-color: #23461e; }
-        .back-link { display: block; text-align: center; margin-top: 20px; color: #555; text-decoration: none; }
-        .whatsapp-box { background: #e8f5e9; border: 1px solid #c8e6c9; padding: 15px; border-radius: 6px; text-align: center; margin-top: 20px; }
-        .btn-whatsapp { display: inline-block; background-color: #25d366; color: white; padding: 10px 20px; border-radius: 4px; text-decoration: none; font-weight: bold; margin-top: 10px; }
+        .whatsapp-notice { background: #f0fdf4; border: 1px solid #dcfce7; padding: 20px; border-radius: 10px; text-align: center; margin-top: 25px; }
+        .whatsapp-notice p { font-size: 13px; color: #166534; margin-bottom: 12px; }
+        .btn-wa { display: inline-block; background-color: var(--whatsapp); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px; }
+        .back-link { display: block; text-align: center; margin-top: 25px; color: var(--text-muted); text-decoration: none; font-size: 13px; font-weight: 500; }
     </style>
 </head>
 <body>
@@ -26,36 +47,44 @@
             <img src="logoSAM.png" alt="Logo SAM">
             <h1>استمارة طلب شراء زيت الزيتون</h1>
         </div>
-        <form onsubmit="event.preventDefault(); alert('تم تسجيل طلب الشراء بنجاح! يرجى الانضمام لمجموعة الواتساب للمتابعة.');">
-            <div>
-                <label>الاسم الكامل:</label>
+        
+        <form onsubmit="event.preventDefault(); alert('تم تسجيل طلب الشراء بنجاح! سيتم توجيهك لمجموعة الواتساب.'); window.open('https://chat.whatsapp.com/L5dneKof0Qc8Wk3jZCgZJ6?s=cl&p=a&mlu=4&ilr=4', '_blank');">
+            <div class="form-group">
+                <label>الاسم الكامل</label>
                 <input type="text" required placeholder="أدخل اسمك الكريم">
             </div>
-            <div>
-                <label>رقم الهاتف (واتساب للمتابعة):</label>
+            <div class="form-group">
+                <label>رقم الهاتف (واتساب للتواصل)</label>
                 <input type="tel" required placeholder="06XXXXXXXX">
             </div>
-            <div>
-                <label>الكمية المطلوبة (باللتر):</label>
-                <input type="number" required placeholder="مثال: 50 لتر">
+            <div class="form-group">
+                <label>الكمية المطلوبة (لتر)</label>
+                <input type="number" required placeholder="مثال: 100">
             </div>
-            <div>
-                <label>المدينة / جهة التسليم:</label>
+            <div class="form-group">
+                <label>المدينة / جهة التسليم</label>
                 <input type="text" required placeholder="المدينة المستهدفة">
             </div>
-            <div>
-                <label>مواصفات إضافية:</label>
-                <textarea rows="3" placeholder="تحديد تفضيلات العصر أو التغليف..."></textarea>
+            <div class="form-group">
+                <label>وصف المواصفات المطلوبة</label>
+                <textarea rows="3" placeholder="تحديد تفضيلات الجودة أو التغليف..."></textarea>
             </div>
-            <button type="submit">إرسال الطلب</button>
+            <div class="form-group">
+                <label>إرفاق ملف توضيحي (اختياري)</label>
+                <div class="file-upload-box" onclick="document.getElementById('buyFile').click()">
+                    <span class="file-label" id="buyFileText">📁 انقر هنا لاختيار صورة أو مستند للطلب</span>
+                    <input type="file" id="buyFile" accept="image/*,video/*,.pdf" onchange="document.getElementById('buyFileText').textContent = '📎 تم إرفاق الملف: ' + this.files[0].name">
+                </div>
+            </div>
+            <button type="submit">إرسال طلب الشراء</button>
         </form>
 
-        <div class="whatsapp-box">
-            <p>لمتابعة طلبك والتواصل المباشر مع البائعين، انضم إلى مجموعة الواتساب الخاصة بزيت الزيتون[span_1](start_span)[span_1](end_span):</p>
-            <a href="https://chat.whatsapp.com/L5dneKof0Qc8Wk3jZCgZJ6?s=cl&p=a&mlu=4&ilr=4" target="_blank" class="btn-whatsapp">الانضمام لمجموعة واتساب الزيت</a>
+        <div class="whatsapp-notice">
+            <p>للتواصل المباشر مع البائعين، انضم لمجموعة الواتساب الخاصة بزيت الزيتون:</p>
+            <a href="https://chat.whatsapp.com/L5dneKof0Qc8Wk3jZCgZJ6?s=cl&p=a&mlu=4&ilr=4" target="_blank" class="btn-wa">الانضمام لمجموعة واتساب الزيت</a>
         </div>
 
-        <a href="index.html" class="back-link">← العودة إلى الصفحة الرئيسية</a>
+        <a href="index.html" class="back-link">← العودة إلى الرئيسية</a>
     </div>
 </body>
 </html>
