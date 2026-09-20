@@ -1,93 +1,57 @@
-<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>طلب شراء المعدات والتجهيزات والمستلزمات</title><style>
-:root{--g:#126b43;--g2:#0b4f32;--gold:#b88a25;--bg:#f5f7f5;--card:#fff;--txt:#17221c;--muted:#66736b;--line:#dce5df;--wa:#1fae58;--danger:#b42318}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font-family:Tahoma,Arial,sans-serif}
-.wrap{width:min(760px,calc(100% - 24px));margin:auto}
-header{background:linear-gradient(145deg,var(--g2),var(--g));color:#fff;padding:18px 0}
-.brand{display:flex;align-items:center;gap:14px}.brand img{width:74px;height:74px;object-fit:cover;border-radius:50%;background:#fff}
-.brand h1{font-size:20px;margin:0 0 5px}.brand p{font-size:12px;margin:0;opacity:.9}
-.card{background:var(--card);margin:16px 0;padding:18px;border:1px solid var(--line);border-radius:18px;box-shadow:0 8px 24px rgba(20,50,35,.07)}
-h2{font-size:19px;margin:0 0 14px}h3{font-size:15px;margin:18px 0 8px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.tile{background:#fff;border:2px solid var(--line);border-radius:16px;padding:18px 12px;text-align:center;text-decoration:none;color:var(--txt);display:block;transition:.2s}
-.tile:hover{border-color:var(--g);background:#f1f8f4}.tile .ico{font-size:32px;display:block;margin-bottom:8px}
-label{display:block;font-weight:700;font-size:13px;margin:13px 0 6px}
-input,textarea,select{width:100%;padding:12px;border:1px solid #cbd7cf;border-radius:11px;font:inherit;background:#fff}
-textarea{min-height:90px;resize:vertical}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.notice{padding:12px;border-radius:12px;background:#fff8e8;border:1px solid #ead7a5;font-size:12px;line-height:1.8}
-.rule{display:flex;gap:9px;align-items:flex-start;font-size:12px;line-height:1.8;margin:14px 0}.rule input{width:20px;height:20px;flex:none}
-.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:12px;padding:13px 16px;font:inherit;font-weight:700;cursor:pointer;text-decoration:none}
-.primary{background:var(--g);color:#fff}.wa{background:var(--wa);color:#fff}.light{background:#edf2ee;color:var(--txt)}
-.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}.actions .btn{flex:1;min-width:150px}
-.files{border:2px dashed #b9c9be;border-radius:14px;padding:15px;text-align:center;background:#fafcfb}
-.files input{border:0;padding:5px}.filelist{text-align:right;font-size:12px;margin-top:8px;line-height:1.7}
-.preview{white-space:pre-line;background:#f7faf8;border:1px dashed #b8c8bd;border-radius:13px;padding:14px;line-height:1.9;font-size:13px}
-footer{text-align:center;color:var(--muted);font-size:11px;padding:5px 0 25px}
-.back{font-size:12px;color:#fff;text-decoration:none;display:inline-block;margin-bottom:12px}
-@media(max-width:560px){.grid,.row{grid-template-columns:1fr}.brand img{width:62px;height:62px}.brand h1{font-size:17px}}
-</style></head>
-<body><header><div class="wrap"><a class="back" href="index.html">← الرئيسية</a><div class="brand"><img src="logo.png"><div><h1>سوق أرباب المعاصر – البيع والشراء</h1><p>طلب شراء معدات أو مستلزمات</p></div></div></div></header>
-<main class="wrap"><section class="card"><h2>طلب شراء المعدات والتجهيزات والمستلزمات</h2>
-<label>اسم المشتري *</label><input id="name" placeholder="الاسم الكامل"><label>اسم الوحدة / المؤسسة</label><input id="unit" placeholder="اسم المعصرة أو الشركة"><label>المدينة / المنطقة *</label><input id="location" placeholder="مكان التسليم"><label>المعدة / المنتج المطلوب *</label><input id="product" placeholder="مثال: آلة تصفية"><label>الكمية</label><input id="quantity" placeholder="مثال: 1"><label>الميزانية التقريبية</label><input id="price" placeholder="ميزانيتك"><label>المواصفات المطلوبة</label><textarea id="details" placeholder="القدرة، الماركة، الحالة..."></textarea>
-<label>الصور والملفات والفيديوهات</label>
-<div class="files"><input id="media" type="file" multiple accept="image/*,video/*,.pdf,.doc,.docx,.xls,.xlsx"><div id="filelist" class="filelist">يمكنك اختيار عدة صور أو فيديوهات أو ملفات.</div></div>
-<label class="rule"><input type="checkbox" id="agree"><span>أوافق على القانون الداخلي للمجموعة، وأقر بصحة المعلومات، وأتحمل مسؤوليتي عن العرض أو الطلب وعن أي معاملة تتم بسببه، وأعلم أن المشرفين غير مسؤولين عن عمليات البيع والشراء.</span></label>
-<div class="actions"><button class="btn primary" onclick='previewOnly("🔵 طلب شراء معدات وتجهيزات")'>مراجعة الطلب</button></div>
-</section>
-<section class="card" id="previewBox" style="display:none"><h2>المعاينة</h2><div id="preview" class="preview"></div>
-<div class="actions"><button class="btn wa" onclick='send("🔵 طلب شراء معدات وتجهيزات")'>📲 إرسال إلى واتساب</button><a class="btn light" href="index.html">إلغاء</a></div>
-<div class="notice" style="margin-top:12px">ملاحظة: لا يستطيع HTML نشر رسالة تلقائيًا داخل مجموعة واتساب دون تفاعل المستخدم أو تكامل رسمي. على الهاتف يمكن استخدام نافذة المشاركة لإرسال النص والملفات إلى واتساب إذا كان المتصفح يدعم ذلك؛ وإلا سيتم فتح رابط المجموعة ليتم الإرسال يدويًا.</div>
-</section></main><footer>النشر النهائي يخضع لمراجعة المشرفين.</footer>
-<script>
-const GROUP_LINK="https://chat.whatsapp.com/PUT_YOUR_GROUP_LINK_HERE";
-const ADMIN_NUMBER="212600000000"; // احتياطي: رقم المشرف بصيغة دولية
-let selectedFiles=[];
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طلب شراء معدات ومستلزمات</title>
+    <style>
+        body { font-family: Tahoma, Arial, sans-serif; background-color: #f7f9f6; margin: 0; padding: 20px; color: #333; direction: rtl; text-align: right; }
+        .container { max-width: 700px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .header { text-align: center; margin-bottom: 25px; }
+        .header img { max-width: 120px; height: auto; }
+        h1 { color: #1e3a8a; font-size: 22px; }
+        form { display: flex; flex-direction: column; gap: 15px; }
+        label { font-weight: bold; font-size: 14px; color: #444; }
+        input, select, textarea { padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; width: 100%; box-sizing: border-box; }
+        button { background-color: #1e3a8a; color: white; padding: 12px; border: none; border-radius: 4px; font-size: 16px; font-weight: bold; cursor: pointer; }
+        button:hover { background-color: #172554; }
+        .back-link { display: block; text-align: center; margin-top: 20px; color: #555; text-decoration: none; }
+        .whatsapp-box { background: #e8f5e9; border: 1px solid #c8e6c9; padding: 15px; border-radius: 6px; text-align: center; margin-top: 20px; }
+        .btn-whatsapp { display: inline-block; background-color: #25d366; color: white; padding: 10px 20px; border-radius: 4px; text-decoration: none; font-weight: bold; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="logoSAM.png" alt="Logo SAM">
+            <h1>استمارة طلب معدات ومستلزمات</h1>
+        </div>
+        <form onsubmit="event.preventDefault(); alert('تم تسجيل طلب المعدات بنجاح! انضم للمجموعة لمتابعة العروض المناسبة.');">
+            <div>
+                <label>اسم المسؤول / المعصرة:</label>
+                <input type="text" required placeholder="اسم المستفيد أو المسؤول">
+            </div>
+            <div>
+                <label>رقم الهاتف (واتساب):</label>
+                <input type="tel" required placeholder="06XXXXXXXX">
+            </div>
+            <div>
+                <label>نوع المعدة المطلوبة:</label>
+                <input type="text" required placeholder="مثال: وحدة طحن، فاصلة مركزية، صهريج...">
+            </div>
+            <div>
+                <label>المواصفات المطلوبة:</label>
+                <textarea rows="3" placeholder="القدرة الإنتاجية، جديدة أو مستعملة..."></textarea>
+            </div>
+            <button type="submit">إرسال الطلب</button>
+        </form>
 
-function $(id){return document.getElementById(id)}
-function filesChanged(input){
-  selectedFiles=[...input.files];
-  $("filelist").innerHTML=selectedFiles.length
-    ? selectedFiles.map(f=>`• ${escapeHtml(f.name)} (${Math.round(f.size/1024)} KB)`).join("<br>")
-    : "لم يتم اختيار ملفات";
-}
-function escapeHtml(s){return s.replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
-function buildMessage(kind){
-  const fields=[["الاسم", $("name")?.value],["الوحدة/المؤسسة",$("unit")?.value],
-    ["المدينة/المنطقة",$("location")?.value],["الكمية",$("quantity")?.value],
-    ["الثمن / الميزانية",$("price")?.value],["التفاصيل",$("details")?.value]];
-  let s=`🫒 سوق أرباب المعاصر – البيع والشراء\n\n${kind}\n`;
-  fields.forEach(([k,v])=>{if(v?.trim())s+=`📌 ${k}: ${v.trim()}\n`});
-  if($("onssa")) s+=`🏛️ الترخيص الصحي ONSSA: ${$("onssa").value}\n`;
-  if($("onssaNumber")?.value.trim()) s+=`🔢 رقم الترخيص: ${$("onssaNumber").value.trim()}\n`;
-  s+=`\n☑️ أوافق على القانون الداخلي، وأتحمل مسؤوليتي عن المعلومات والمعاملة، وأعلم أن المشرفين غير مسؤولين عن البيع والشراء.`;
-  return s;
-}
-async function send(kind){
-  const agree=$("agree");
-  if(agree && !agree.checked){alert("يجب الموافقة على القانون الداخلي أولًا.");return}
-  if($("onssa") && $("onssa").value!=="نعم"){alert("لا يمكن متابعة عرض زيت الزيتون دون تأكيد وجود الترخيص الصحي من ONSSA.");return}
-  const msg=buildMessage(kind);
-  $("preview").textContent=msg;
+        <div class="whatsapp-box">
+            <p>لمتابعة طلبك والتواصل مع المزودين، انضم إلى مجموعة الواتساب الخاصة بالمعدات والمستلزمات[span_3](start_span)[span_3](end_span):</p>
+            <a href="https://chat.whatsapp.com/LT80OqFuaF63lPgKAQJtfJ?s=cl&p=a&mlu=4&ilr=4" target="_blank" class="btn-whatsapp">الانضمام لمجموعة واتساب المعدات</a>
+        </div>
 
-  // مشاركة الملفات عبر نظام الهاتف إذا كان المتصفح يدعم Web Share API.
-  if(selectedFiles.length && navigator.share && navigator.canShare){
-    try{
-      const data={title:"سوق أرباب المعاصر",text:msg,files:selectedFiles};
-      if(navigator.canShare({files:selectedFiles})){
-        await navigator.share(data);
-        return;
-      }
-    }catch(e){ if(e.name==="AbortError") return; }
-  }
-  // fallback: فتح مجموعة واتساب/المشرف مع النص جاهزًا.
-  if(GROUP_LINK.includes("PUT_YOUR")){
-    alert("أضف رابط مجموعة واتساب الحقيقي داخل GROUP_LINK في ملف HTML.");
-    return;
-  }
-  window.open(GROUP_LINK,"_blank");
-}
-function previewOnly(kind){
-  $("preview").textContent=buildMessage(kind);
-  $("previewBox").style.display="block";
-  window.scrollTo({top:document.body.scrollHeight,behavior:"smooth"});
-}
-document.getElementById("media").addEventListener("change",e=>filesChanged(e.target));</script></body></html>
+        <a href="index.html" class="back-link">← العودة إلى الصفحة الرئيسية</a>
+    </div>
+</body>
+</html>
