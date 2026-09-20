@@ -1,88 +1,22 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منصة أرباب المعاصر - المنصة الرقمية المهنية</title>
-    <style>
-        :root {
-            --primary-oil: #2e5a27;
-            --primary-eq: #1e3a8a;
-            --whatsapp: #25d366;
-            --bg-color: #f8fafc;
-            --card-bg: #ffffff;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --border-color: #e2e8f0;
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: system-ui, -apple-system, sans-serif; background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; padding: 40px 20px; direction: rtl; text-align: right; }
-        .wrapper { max-width: 1000px; margin: 0 auto; }
-        .hero { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 40px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.03); margin-bottom: 30px; }
-        .hero img { max-width: 130px; height: auto; margin-bottom: 20px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05)); }
-        .hero h1 { font-size: 26px; color: var(--text-main); margin-bottom: 12px; font-weight: 800; }
-        .hero p { color: var(--text-muted); font-size: 16px; max-width: 700px; margin: 0 auto; }
-        
-        .grid-sections { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-        .section-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); transition: transform 0.2s ease, box-shadow 0.2s ease; display: flex; flex-direction: column; justify-content: space-between; }
-        .section-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.06); }
-        
-        .section-card.oil h3 { color: var(--primary-oil); }
-        .section-card.eq h3 { color: var(--primary-eq); }
-        
-        .section-card h3 { font-size: 20px; margin-bottom: 12px; font-weight: 700; }
-        .section-card p { color: var(--text-muted); font-size: 14px; margin-bottom: 24px; }
-        
-        .actions { display: flex; flex-direction: column; gap: 10px; }
-        .btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; transition: background 0.2s; }
-        
-        .btn-oil { background-color: var(--primary-oil); color: #fff; }
-        .btn-oil:hover { background-color: #23461e; }
-        
-        .btn-eq { background-color: var(--primary-eq); color: #fff; }
-        .btn-eq:hover { background-color: #172554; }
-        
-        .btn-wa { background-color: var(--whatsapp); color: #fff; margin-top: 5px; }
-        .btn-wa:hover { background-color: #1ebd56; }
-
-        @media(max-width: 768px) { .grid-sections { grid-template-columns: 1fr; } }
-    </style>
-</head>
-<body>
-    <div class="wrapper">
-        <div class="hero">
-            <img src="logoSAM.png" alt="شعار المنصة logoSAM">
-            <h1>منصة سوق أرباب المعاصر</h1>
-            <p>الفضاء الرقمي الموحد لتنظيم وتسهيل معاملات زيت الزيتون والمعدات المهنية بكفاءة واحترافية عالية.</p>
-        </div>
-
-        <div class="grid-sections">
-            <!-- قطاع زيت الزيتون -->
-            <div class="section-card oil">
-                <div>
-                    <h3>قطاع زيت الزيتون</h3>
-                    <p>منصة تداول العروض وطلبات الشراء الخاصة بزيوت العصر الحديث والتقليدي بمعايير جودة عالية.</p>
-                </div>
-                <div class="actions">
-                    <a href="oil-sell.html" class="btn btn-oil">عرض زيت للبيع</a>
-                    <a href="oil-buy.html" class="btn btn-oil" style="background-color: transparent; border: 1px solid var(--primary-oil); color: var(--primary-oil);">طلب شراء زيت</a>
-                    <a href="https://chat.whatsapp.com/L5dneKof0Qc8Wk3jZCgZJ6?s=cl&p=a&mlu=4&ilr=4" target="_blank" class="btn btn-wa">مجموعة واتساب الزيت</a>
-                </div>
-            </div>
-
-            <!-- قطاع المعدات والمستلزمات -->
-            <div class="section-card eq">
-                <div>
-                    <h3>المعدات والتجهيزات</h3>
-                    <p>بيع وشراء آلات العصر، خطوط الإنتاج، الصهاريج، والمستلزمات التقنية للمعاصر.</p>
-                </div>
-                <div class="actions">
-                    <a href="equipment-sell.html" class="btn btn-eq">عرض معدات للبيع</a>
-                    <a href="equipment-buy.html" class="btn btn-eq" style="background-color: transparent; border: 1px solid var(--primary-eq); color: var(--primary-eq);">طلب معدات</a>
-                    <a href="https://chat.whatsapp.com/LT80OqFuaF63lPgKAQJtfJ?s=cl&p=a&mlu=4&ilr=4" target="_blank" class="btn btn-wa">مجموعة واتساب المعدات</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>سوق أرباب المعاصر – البيع والشراء</title><style>
+:root{--green:#07552f;--green2:#0d6a3b;--gold:#b58a2a;--gold2:#d2b25d;--cream:#fbfaf6;--ink:#18251e;--muted:#69766f;--line:#e7dfc9;--wa:#159447}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);background:linear-gradient(180deg,#fff,var(--cream) 45%,#f4f6f2);font-family:Tahoma,Arial,sans-serif}a{text-decoration:none;color:inherit}.wrap{width:min(960px,calc(100% - 28px));margin:auto}
+.top,.head{position:relative;overflow:hidden;background:linear-gradient(180deg,#fff,#fbfaf6 70%,#f4efe0);border-bottom:1px solid var(--line)}.top:before,.head:before{content:"";position:absolute;width:600px;height:600px;border:1px solid #b58a2a22;border-radius:50%;left:50%;top:-465px;transform:translateX(-50%)}.top:after,.head:after{content:"";position:absolute;width:480px;height:480px;border:1px solid #07552f14;border-radius:50%;left:50%;top:-400px;transform:translateX(-50%)}
+.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:12px;position:relative;z-index:2}.brand{display:flex;gap:12px;align-items:center}.brand img{width:58px;height:58px;border-radius:50%;object-fit:cover;border:2px solid var(--gold2);background:#fff;box-shadow:0 5px 16px #60460f20}.brand b{display:block;color:var(--green);font-size:16px}.brand small{display:block;color:var(--gold);font-size:11px;margin-top:3px}.pill{padding:7px 12px;border:1px solid #b58a2a55;border-radius:99px;background:#fff;color:var(--green);font-size:11px}
+.hero{text-align:center;position:relative;z-index:2;padding:25px 0 45px}.hero:before{content:"";display:block;width:145px;aspect-ratio:1;margin:0 auto 16px;background:url("logoSAM.jpg") center/cover;border-radius:50%;border:3px solid #fff;outline:1px solid var(--gold2);box-shadow:0 12px 30px #46370f20}.hero h1{color:var(--green);font-size:clamp(28px,7vw,44px);margin:6px 0 9px}.hero p{max-width:700px;margin:auto;color:var(--muted);line-height:1.9;font-size:13px}.head .wrap{position:relative;z-index:2;padding-bottom:24px}.back{display:inline-block;margin-top:14px;padding:8px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--green);font-size:12px}.head h1{color:var(--green);font-size:clamp(23px,6vw,32px);margin:18px 0 5px}.head p{color:var(--muted);font-size:12px;line-height:1.8}
+section{padding:22px 0}.cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}.card{background:#fffffff2;border:1px solid var(--line);border-radius:22px;padding:20px;box-shadow:0 14px 38px #243f2d12}.choice{min-height:200px;display:flex;flex-direction:column;justify-content:space-between}.ico{width:55px;height:55px;border-radius:16px;display:grid;place-items:center;font-size:27px;background:linear-gradient(145deg,#f8f3e4,#edf6f0);border:1px solid var(--line)}.choice h2{font-size:18px;color:var(--green);margin:14px 0 7px}.choice p{font-size:12px;color:var(--muted);line-height:1.85}.arrow{color:var(--gold);font-weight:bold;font-size:12px}.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.flow div{text-align:center;background:#faf8f0;border:1px solid var(--line);border-radius:14px;padding:13px 8px;font-size:11px}.flow b{display:block;color:var(--green);font-size:20px;margin-bottom:4px}.notice{padding:14px 15px;border-radius:15px;background:#fffaf0;border:1px solid #ead9aa;color:#514728;font-size:12px;line-height:1.9}.notice b{color:var(--green)}
+.form{margin-top:-12px}.steps{display:flex;gap:6px;margin-bottom:17px}.steps i{height:5px;flex:1;background:#e5ebe6;border-radius:9px}.steps i.on{background:linear-gradient(90deg,var(--gold),var(--gold2))}label{display:block;font-size:12px;font-weight:bold;margin:13px 0 6px;color:#2b382f}.req{color:#a62920}input,textarea,select{width:100%;padding:12px 13px;border:1px solid #d5ddd7;border-radius:12px;background:#fff;color:var(--ink);font:inherit;outline:none}input:focus,textarea:focus,select:focus{border-color:var(--gold2);box-shadow:0 0 0 3px #b58a2a18}textarea{min-height:105px;resize:vertical}.row{display:grid;grid-template-columns:1fr 1fr;gap:11px}.upload{border:2px dashed #c9d5cb;border-radius:16px;background:#fbfcfa;text-align:center;padding:18px}.upload b{display:block;color:var(--green);font-size:13px;margin:6px}.upload small{display:block;color:var(--muted);font-size:10px;margin-bottom:10px}.upload label{display:inline-block;background:var(--green);color:#fff;padding:10px 15px;border-radius:11px;cursor:pointer;margin:0}.upload input{display:none}.previews{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:10px}.thumb{position:relative;aspect-ratio:1;overflow:hidden;border-radius:10px;border:1px solid var(--line);background:#fff}.thumb img,.thumb video{width:100%;height:100%;object-fit:cover}.x{position:absolute;top:3px;left:3px;border:0;border-radius:50%;background:#000b;color:#fff;width:23px;height:23px}.check{display:flex;gap:8px;font-size:11px;line-height:1.85;margin:15px 0}.check input{width:20px;flex:none}.actions{display:flex;gap:8px;margin-top:16px}.btn{border:0;border-radius:12px;padding:13px 15px;font-weight:bold;cursor:pointer;text-align:center;font-family:inherit}.primary{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;flex:1}.wa{background:var(--wa);color:#fff;flex:1}.light{background:#f0f3f0;color:var(--green);border:1px solid #dbe2dc}.preview{white-space:pre-line;background:#f8faf8;border:1px dashed #b8c8bc;padding:14px;border-radius:13px;line-height:1.95;font-size:12px}.err{color:#a62920;font-size:11px}.hidden{display:none!important}.footer{text-align:center;color:var(--muted);font-size:11px;padding:28px 0 38px;border-top:1px solid #b58a2a20;margin-top:12px}
+@media(max-width:650px){.wrap{width:calc(100% - 20px)}.brand img{width:51px;height:51px}.brand b{font-size:14px}.brand small{font-size:10px}.hero:before{width:125px}.hero h1{font-size:29px}.cards,.row{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr}.previews{grid-template-columns:repeat(3,1fr)}.actions{flex-wrap:wrap}.actions .btn{min-width:calc(50% - 4px)}}
+</style><meta name="logo-file" content="logoSAM.jpg"></head><body>
+<header class="top"><div class="wrap"><div class="nav"><div class="brand"><img src="logoSAM.jpg"><div><b>سوق أرباب المعاصر</b><small>البيع والشراء</small></div></div><span class="pill">🫒 فضاء مهني</span></div>
+<div class="hero"><span class="pill">بيع • شراء • معدات • زيت الزيتون</span><h1>السوق المهني<br>لأرباب المعاصر</h1><p>أنشئ عرضك أو طلبك في دقائق، أرفق الصور والفيديو والملفات، ثم انشره مباشرة في مجموعة واتساب.</p></div></div></header>
+<main class="wrap"><section><h2>اختر العملية</h2><div class="cards">
+<a class="card choice" href="oil-sell.html"><div><div class="ico">🫒</div><h2>بيع زيت الزيتون</h2><p>عرض مختصر ومنظم مع التحقق من شرط الترخيص الصحي من ONSSA.</p></div><span class="arrow">ابدأ العرض ←</span></a>
+<a class="card choice" href="oil-buy.html"><div><div class="ico">🛒</div><h2>طلب شراء زيت الزيتون</h2><p>حدد المنتج والكمية والميزانية والمنطقة.</p></div><span class="arrow">أنشئ الطلب ←</span></a>
+<a class="card choice" href="equipment-sell.html"><div><div class="ico">⚙️</div><h2>بيع المعدات والتجهيزات</h2><p>اعرض المعدة مع الصور والفيديو والمواصفات والحالة.</p></div><span class="arrow">ابدأ العرض ←</span></a>
+<a class="card choice" href="equipment-buy.html"><div><div class="ico">🔎</div><h2>طلب شراء المعدات والمستلزمات</h2><p>حدد المعدة والمواصفات التي تبحث عنها.</p></div><span class="arrow">أنشئ الطلب ←</span></a>
+</div></section>
+<section><div class="card"><h2>كيف تعمل؟</h2><div class="flow"><div><b>1</b>اختر العملية</div><div><b>2</b>أدخل المعلومات</div><div><b>3</b>أرفق الصور والملفات</div><div><b>4</b>انشر مباشرة</div></div></div></section>
+<section><div class="notice">⚡ <b>النشر المباشر:</b> لا تحتاج إلى انتظار موافقة المشرف. بعد الموافقة على القانون الداخلي يمكنك نشر العرض أو الطلب مباشرة. وللمشرفين حق حذف أي منشور مخالف للقانون الداخلي عند ثبوت المخالفة.</div></section>
+<section><div class="card"><h2>📲 مجموعة واتساب</h2><p style="font-size:12px;color:#68756e;line-height:1.8">بعد تجهيز الإعلان، سيتم توجيهك إلى مجموعة «سوق أرباب المعاصر» لإتمام النشر.</p><a class="btn primary" style="display:block" href="https://chat.whatsapp.com/DdPqC7qvnZ264Y5mGvVvts" target="_blank">الدخول إلى مجموعة البيع والشراء</a></div></section>
+</main><footer class="footer">🫒 سوق أرباب المعاصر – البيع والشراء<br>المشرفون غير مسؤولين عن عمليات البيع والشراء بين الأطراف.</footer></body></html>
