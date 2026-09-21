@@ -29,8 +29,8 @@ section{padding:22px 0}.cards{display:grid;grid-template-columns:1fr 1fr;gap:16p
 <div id="err" class="err"></div>
 <div class="actions"><a class="btn light" href="index.html">إلغاء</a><button class="btn primary" onclick='review("🟢 عرض بيع زيت الزيتون","زيت الزيتون")'>معاينة ونشر</button></div></div>
 <div id="review" class="hidden"><h2>✅ الإعلان جاهز للنشر</h2><div id="preview" class="preview"></div>
-<div class="notice" style="margin-top:12px">📌 تم تنسيق الإعلان تلقائيًا بصيغة مختصرة. يمكنك مشاركة النص والمرفقات مباشرة من الهاتف، أو نسخ الإعلان ثم فتح المجموعة.</div>
-<div class="actions"><button class="btn light" onclick='$("review").classList.add("hidden");$("form").classList.remove("hidden")'>تعديل</button><button class="btn light" onclick="copyAndOpen()">📋 نسخ وفتح المجموعة</button><button class="btn wa" onclick="share()">📲 النشر في واتساب</button></div>
+<div class="notice" style="margin-top:12px">📌 <b>طريقة النشر:</b> بعد التأكيد سيتم تجهيز الإعلان ونسخه تلقائيًا، ثم تُفتح مجموعة واتساب المعنية مباشرة. لا حاجة للبحث عن المجموعة؛ الصق الإعلان في خانة الرسالة وأضف المرفقات إن وجدت ثم اضغط <b>إرسال</b>.</div>
+<div class="actions"><button class="btn light" onclick='$("review").classList.add("hidden");$("form").classList.remove("hidden")'>تعديل</button><button class="btn wa" onclick="copyAndOpen()">📲 تأكيد وفتح واتساب للنشر</button></div>
 </div></section></main><footer class="footer">🫒 سوق أرباب المعاصر – البيع والشراء<br>النشر المباشر مسؤولية صاحبه، وللمشرف حق حذف المخالف.</footer>
 <script>
 let files=[];
@@ -95,25 +95,20 @@ function review(kind,cat){
   window.scrollTo({top:0,behavior:"smooth"});
 }
 async function share(){
-  const t=$("preview").textContent;
-  if(files.length && navigator.share && navigator.canShare && navigator.canShare({files})){
-    try{
-      await navigator.share({title:"سوق أرباب المعاصر",text:t,files});
-      return;
-    }catch(e){if(e.name==="AbortError")return}
-  }
-  // For a WhatsApp group, the invite link cannot carry a prefilled group message.
-  // Open the group directly; the announcement remains ready to copy/paste.
-  window.open(GROUP_LINK,"_blank");
+  return copyAndOpen();
 }
 async function copyAndOpen(){
   const t=$("preview").textContent;
+  let copied=false;
   try{
     await navigator.clipboard.writeText(t);
-    alert("تم نسخ الإعلان. سيتم فتح مجموعة واتساب المناسبة؛ ألصق الإعلان ثم اضغط إرسال.");
-  }catch(e){
-    alert("انسخ الإعلان من المعاينة ثم افتح مجموعة واتساب المناسبة.");
-  }
+    copied=true;
+  }catch(e){}
   window.open(GROUP_LINK,"_blank");
+  setTimeout(()=>{
+    alert(copied
+      ? "تم نسخ المنشور وفتح مجموعة واتساب المناسبة مباشرة. الصق المنشور في خانة الرسالة ثم أرفق الملفات واضغط إرسال."
+      : "تم فتح مجموعة واتساب المناسبة مباشرة. انسخ المنشور من المعاينة، ثم الصقه في خانة الرسالة واضغط إرسال.");
+  },300);
 }
 $("media").addEventListener("change",pick);</script></body></html>
