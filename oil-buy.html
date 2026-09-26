@@ -119,34 +119,20 @@ async function share(){
 async function copyAndOpen(){
   const btns=document.querySelectorAll("button.wa");
   btns.forEach(b=>b.disabled=true);
-  const t=msg(currentKind,currentCat);
-  $("preview").textContent=t;
-  // افتح المجموعة مباشرة من نقرة المستخدم قبل أي await حتى لا يمنع المتصفح النافذة.
-  let groupWindow=null;
-  try{ groupWindow=window.open(GROUP_LINK,"_blank"); }catch(e){}
-  let copied=false;
   try{
-    if(navigator.clipboard && window.isSecureContext){
-      await navigator.clipboard.writeText(t);
-      copied=true;
-    }else{
-      const ta=document.createElement("textarea");
-      ta.value=t; ta.setAttribute("readonly","");
-      ta.style.position="fixed"; ta.style.opacity="0";
-      document.body.appendChild(ta); ta.select();
-      copied=document.execCommand("copy"); ta.remove();
-    }
-  }catch(e){}
-  if(!groupWindow){
-    // إذا منع المتصفح النافذة، افتح الرابط بعد الانتهاء كحل احتياطي.
-    try{ groupWindow=window.open(GROUP_LINK,"_blank"); }catch(e){}
-  }
-  setTimeout(()=>{
-    alert(copied
-      ? "تم نسخ الإعلان إلى الحافظة وفتح مجموعة واتساب. الصق الإعلان داخل المجموعة ثم اضغط إرسال. إذا كان لديك صورة أو فيديو أو ملف، أرفقه يدويًا قبل الإرسال."
-      : "تم فتح مجموعة واتساب. انسخ الإعلان من المعاينة والصقه داخل المجموعة ثم اضغط إرسال. إذا كان لديك صورة أو فيديو أو ملف، أرفقه يدويًا قبل الإرسال.");
-  },250);
-  btns.forEach(b=>b.disabled=false);
+    const t=msg(currentKind,currentCat);
+    $("preview").textContent=t;
+    let copied=false;
+    try{ await navigator.clipboard.writeText(t); copied=true; }catch(e){}
+    window.open(GROUP_LINK,"_blank");
+    setTimeout(()=>{
+      alert(copied
+        ? "تم نسخ الإعلان وفتح مجموعة واتساب. الصق الإعلان ثم اضغط إرسال. إذا كان لديك ملف أو صورة، أرفقها يدويًا في واتساب قبل الإرسال."
+        : "تم فتح مجموعة واتساب. انسخ الإعلان من المعاينة والصقه ثم اضغط إرسال. إذا كان لديك ملف أو صورة، أرفقها يدويًا في واتساب قبل الإرسال.");
+    },300);
+  }catch(e){
+    alert("تعذر تجهيز الإعلان. يرجى المحاولة مرة أخرى.");
+  }finally{btns.forEach(b=>b.disabled=false)}
 }</script><div id="lawModal" class="law-modal" aria-hidden="true"><div class="law-backdrop" onclick="closeLaw()"></div><div class="law-box" role="dialog" aria-modal="true" aria-labelledby="lawTitle"><button class="law-close" type="button" onclick="closeLaw()" aria-label="إغلاق">×</button><h2 id="lawTitle">🫒 القانون الداخلي — سوق أرباب المعاصر – البيع والشراء</h2><div class="law-content">
 <h3>مجموعة مهنية متخصصة في بيع وشراء:</h3><p>🔹 المعدات والتجهيزات ومستلزمات المعاصر.<br>🔹 زيت الزيتون.</p>
 <h3>1️⃣ طبيعة المجموعة</h3><p>المجموعة مخصصة حصريًا للمهنيين، ولتبادل عروض البيع والشراء المرتبطة بنشاط المعاصر وزيت الزيتون ومستلزماته.</p>
